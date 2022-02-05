@@ -102,8 +102,8 @@
                    	  <inputSpec>${project.basedir}/src/main/resources/openapi.yaml</inputSpec>
                       <generatorName>jaxrs-spec</generatorName>
                       <library>quarkus</library>
-					  <apiPackage>de.claudioaltamura.quarkus.openapi.api</apiPackage>
-                      <modelPackage>de.claudioaltamura.quarkus.openapi.model</modelPackage>
+					  <apiPackage>de.claudioaltamura.quarkus.openapi.generator.api</apiPackage>
+                      <modelPackage>de.claudioaltamura.quarkus.openapi.generator.model</modelPackage>
 					  <configOptions>
 					      <sourceFolder>src/main/java</sourceFolder>
 					      <interfaceOnly>true</interfaceOnly>

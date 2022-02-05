@@ -1,4 +1,4 @@
-package de.claudioaltamura;
+package de.claudioaltamura.quarkus.openapi.generator;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;

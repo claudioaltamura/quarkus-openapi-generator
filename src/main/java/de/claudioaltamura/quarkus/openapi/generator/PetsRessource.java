@@ -1,10 +1,10 @@
-package de.claudioaltamura;
+package de.claudioaltamura.quarkus.openapi.generator;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import de.claudioaltamura.quarkus.openapi.api.PetsApi;
-import de.claudioaltamura.quarkus.openapi.model.Pet;
+import de.claudioaltamura.quarkus.openapi.generator.api.PetsApi;
+import de.claudioaltamura.quarkus.openapi.generator.model.Pet;
 
 public class PetsRessource implements PetsApi {
 

@@ -13,3 +13,4 @@ buildNumber.properties
 /quarkus-openapi-generator.iml
 /.project
 /.settings/org.eclipse.m2e.core.prefs
+/.openapi-generator/openapi.yaml-default.sha256
