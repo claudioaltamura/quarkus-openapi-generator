@@ -5,6 +5,11 @@
 # quarkus-openapi-generator
 Quarkus OpenAPI Generator example
 
+## Branches
+
+* main - classes generated into target
+* generated_in_source_folder - classes generated into src/main/java
+
 ## Running the application in dev mode
 
 ```shell script
