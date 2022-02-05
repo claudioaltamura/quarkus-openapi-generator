@@ -12,3 +12,4 @@ buildNumber.properties
 /.idea/
 /quarkus-openapi-generator.iml
 /.project
+/.settings/org.eclipse.m2e.core.prefs
