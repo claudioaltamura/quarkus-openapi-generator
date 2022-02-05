@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.claudioaltamura</groupId>
   <artifactId>quarkus-openapi-generator</artifactId>
@@ -80,41 +81,41 @@
           <parameters>${maven.compiler.parameters}</parameters>
         </configuration>
       </plugin>
-		<plugin>
-			<groupId>org.openapitools</groupId>
-			<artifactId>openapi-generator-maven-plugin</artifactId>
-			<version>5.2.1</version>
-			<executions>
-				<execution>
-					<goals>
-						<goal>generate</goal>
-					</goals>
-					<configuration>
-						<skipValidateSpec>true</skipValidateSpec>
-						<inputSpec>${project.basedir}/src/main/resources/openapi.yaml</inputSpec>
-						<generatorName>jaxrs-spec</generatorName>
-						<apiPackage>de.claudioaltamura.quarkus.openapi.generator.generated.api</apiPackage>
-						<modelPackage>de.claudioaltamura.quarkus.openapi.generator.generated.model</modelPackage>
-						<generateSupportingFiles>false</generateSupportingFiles>
-						<templateDirectory>${project.basedir}/src/main/resources/openapi</templateDirectory>
-						<output>${project.basedir}</output>
-						<configOptions>
-							<additionalModelTypeAnnotations>@SuppressWarnings({"hiding", "static-method", "unused"})</additionalModelTypeAnnotations>
-							<interfaceOnly>true</interfaceOnly>
-							<useBeanValidation>true</useBeanValidation>
-							<useSwaggerAnnotations>false</useSwaggerAnnotations>
-							<openApiNullable>false</openApiNullable>
-							<sourceFolder>src/main/java</sourceFolder>
-							<useTags>true</useTags>
-							<hideGenerationTimestamp>true</hideGenerationTimestamp>
-							<returnResponse>true</returnResponse>
-							<dateLibrary>java8</dateLibrary>
-							<booleanGetterPrefix>is</booleanGetterPrefix>
-						</configOptions>
-					</configuration>
-				</execution>
-			</executions>
-		</plugin>
+      <plugin>
+        <groupId>org.openapitools</groupId>
+        <artifactId>openapi-generator-maven-plugin</artifactId>
+        <version>5.2.1</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <skipValidateSpec>true</skipValidateSpec>
+              <inputSpec>${project.basedir}/src/main/resources/openapi.yaml</inputSpec>
+              <generatorName>jaxrs-spec</generatorName>
+              <apiPackage>de.claudioaltamura.quarkus.openapi.generator.generated.api</apiPackage>
+              <modelPackage>de.claudioaltamura.quarkus.openapi.generator.generated.model</modelPackage>
+              <generateSupportingFiles>false</generateSupportingFiles>
+              <templateDirectory>${project.basedir}/src/main/resources/openapi</templateDirectory>
+              <output>${project.basedir}</output>
+              <configOptions>
+                <additionalModelTypeAnnotations>@SuppressWarnings({"hiding", "static-method", "unused"})</additionalModelTypeAnnotations>
+                <interfaceOnly>true</interfaceOnly>
+                <useBeanValidation>true</useBeanValidation>
+                <useSwaggerAnnotations>false</useSwaggerAnnotations>
+                <openApiNullable>false</openApiNullable>
+                <sourceFolder>src/main/java</sourceFolder>
+                <useTags>true</useTags>
+                <hideGenerationTimestamp>true</hideGenerationTimestamp>
+                <returnResponse>true</returnResponse>
+                <dateLibrary>java8</dateLibrary>
+                <booleanGetterPrefix>is</booleanGetterPrefix>
+              </configOptions>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
   <profiles>
