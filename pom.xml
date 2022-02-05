@@ -80,42 +80,41 @@
           <parameters>${maven.compiler.parameters}</parameters>
         </configuration>
       </plugin>
-      <plugin>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>${surefire-plugin.version}</version>
-        <configuration>
-          <systemPropertyVariables>
-            <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
-            <maven.home>${maven.home}</maven.home>
-          </systemPropertyVariables>
-        </configuration>
-      </plugin>
-      <plugin>
-          <groupId>org.openapitools</groupId>
-          <artifactId>openapi-generator-maven-plugin</artifactId>
-             <executions>
-              <execution>
-                  <goals>
-                      <goal>generate</goal>
-                  </goals>
-                  <configuration>
-                   	  <inputSpec>${project.basedir}/src/main/resources/openapi.yaml</inputSpec>
-                      <generatorName>jaxrs-spec</generatorName>
-                      <library>quarkus</library>
-					  <apiPackage>de.claudioaltamura.quarkus.openapi.api</apiPackage>
-                      <modelPackage>de.claudioaltamura.quarkus.openapi.model</modelPackage>
-					  <configOptions>
-					      <sourceFolder>src/main/java</sourceFolder>
-					      <interfaceOnly>true</interfaceOnly>
-						  <hideGenerationTimestamp>true</hideGenerationTimestamp>
-						  <sortParamsByRequiredFlag>true</sortParamsByRequiredFlag>
-						  <useBeanValidation>true</useBeanValidation>
-						  <useSwaggerAnnotations>false</useSwaggerAnnotations>
-					  </configOptions>
-				  </configuration>
-              </execution>
-          </executions>
-      </plugin>
+		<plugin>
+			<groupId>org.openapitools</groupId>
+			<artifactId>openapi-generator-maven-plugin</artifactId>
+			<version>5.2.1</version>
+			<executions>
+				<execution>
+					<goals>
+						<goal>generate</goal>
+					</goals>
+					<configuration>
+						<skipValidateSpec>true</skipValidateSpec>
+						<inputSpec>${project.basedir}/src/main/resources/openapi.yaml</inputSpec>
+						<generatorName>jaxrs-spec</generatorName>
+						<apiPackage>de.claudioaltamura.quarkus.openapi.generator.generated.api</apiPackage>
+						<modelPackage>de.claudioaltamura.quarkus.openapi.generator.generated.model</modelPackage>
+						<generateSupportingFiles>false</generateSupportingFiles>
+						<templateDirectory>${project.basedir}/src/main/resources/openapi</templateDirectory>
+						<output>${project.basedir}</output>
+						<configOptions>
+							<additionalModelTypeAnnotations>@SuppressWarnings({"hiding", "static-method", "unused"})</additionalModelTypeAnnotations>
+							<interfaceOnly>true</interfaceOnly>
+							<useBeanValidation>true</useBeanValidation>
+							<useSwaggerAnnotations>false</useSwaggerAnnotations>
+							<openApiNullable>false</openApiNullable>
+							<sourceFolder>src/main/java</sourceFolder>
+							<useTags>true</useTags>
+							<hideGenerationTimestamp>true</hideGenerationTimestamp>
+							<returnResponse>true</returnResponse>
+							<dateLibrary>java8</dateLibrary>
+							<booleanGetterPrefix>is</booleanGetterPrefix>
+						</configOptions>
+					</configuration>
+				</execution>
+			</executions>
+		</plugin>
     </plugins>
   </build>
   <profiles>

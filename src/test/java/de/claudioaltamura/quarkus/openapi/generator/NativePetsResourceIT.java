@@ -1,4 +1,4 @@
-package de.claudioaltamura;
+package de.claudioaltamura.quarkus.openapi.generator;
 
 import io.quarkus.test.junit.NativeImageTest;
 
